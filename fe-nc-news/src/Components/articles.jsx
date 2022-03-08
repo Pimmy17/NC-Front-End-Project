@@ -1,11 +1,10 @@
-import {useState, useEffect} from "react";
+import {useEffect} from "react";
 import * as api from "../Api";
 import {Link} from 'react-router-dom' 
 
 
-export default function Articles () {
-    const [topic, setTopic] = useState('');
-    const [articles, setArticles] = useState([])
+export default function Articles ({topic, setTopic, articles, setArticles}) {
+
 
     useEffect(() =>{
         if(!topic) {
@@ -25,8 +24,9 @@ export default function Articles () {
          <section className='list'>{articles.map(({article_id, title, author, votes}) => {
             return (
                 <div key={article_id} className='articles'>
-                    <Link to={`/articles/${article_id}`} className='list-text'> {title} <br />
-                    Author: {author} <br/>
+                    <Link to={`/news/all/articles/${article_id}`} className='list-text'> 
+                    {title} <br />
+                    by {author} <br/>
                     Votes: {votes}
                 </Link>
                 </div>

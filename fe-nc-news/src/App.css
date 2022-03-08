@@ -29,7 +29,7 @@ header .link {
 }
 
 .link {
-  color: #ccf4fe;
+  color: white;
 }
 
 .articles {
@@ -39,8 +39,12 @@ header .link {
   margin: 4px;
 }
 
+.article-card {
+  color: gold;
+}
+
 .list-text {
-  color: #ccf4fe;
+  color: white;
   font-weight: bold;
   text-decoration: none;
 }

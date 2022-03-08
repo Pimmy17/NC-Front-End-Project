@@ -1,4 +1,3 @@
-import React from 'react';
 import axios from 'axios';
 
 const ncNews = axios.create({
@@ -9,4 +8,10 @@ export function getArticles(topic) {
     return ncNews.get("/articles", {params:{topic}}).then(({ data }) => {
       return data.articles;
     });
+  }
+
+  export function getArticlesbyID(article_id) {
+    return ncNews.get(`/articles/${article_id}`).then(({ data }) => {
+      return data.article;
+    })
   }
