@@ -22,6 +22,12 @@ h1 {
   font-size: calc(10px + 2vmin);
 }
 
+header .link {
+  color: #924f9e;
+  padding: 2px;
+  margin: 2px;
+}
+
 .link {
   color: #ccf4fe;
 }
