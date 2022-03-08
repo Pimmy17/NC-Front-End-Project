@@ -6,10 +6,10 @@ export default function Header() {
           <h1>NC NEWS</h1>
 
           <>
-            <Link to="/home" className="link">
+            <Link to="/" className="link">
               <strong>Home</strong>
             </Link>
-            <Link to="/home/all/articles" className="link">
+            <Link to="/news/all/articles" className="link">
               <strong>Articles</strong>
             </Link>
           </>
