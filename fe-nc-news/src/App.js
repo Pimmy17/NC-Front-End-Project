@@ -5,18 +5,27 @@ import Home from "./Components/home";
 import Articles from "./Components/articles";
 import Header from "./Components/Header";
 import ArticleCard from "./Components/article-card";
+import Topics from "./Components/topics";
 
 function App() {
   const [topic, setTopic] = useState("");
   const [articles, setArticles] = useState([]);
+
   return (
     <BrowserRouter>
       <div className="App">
-        <Header />
+        <Header topic={topic} setTopic={setTopic} />
+        <Topics topic={topic} setTopic={setTopic} />
         <Routes>
           <Route path="/" element={<Home />} />
+
           <Route
-            path="/news/all/articles"
+            path="/news/all/articles/:article_id"
+            element={<ArticleCard />}
+          />
+          <Route
+            exact
+            path="/news/:topic/articles"
             element={
               <Articles
                 topic={topic}
@@ -26,10 +35,17 @@ function App() {
               />
             }
           />
-          <Route
-            path="/news/all/articles/:article_id"
-            element={<ArticleCard />}
-          />
+          {/* <Route
+            path="/news/*"
+            element={
+              <Articles
+                topic={topic}
+                setTopic={setTopic}
+                articles={articles}
+                setArticles={setArticles}
+              />
+            }
+          /> */}
         </Routes>
       </div>
     </BrowserRouter>

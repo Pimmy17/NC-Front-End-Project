@@ -15,3 +15,15 @@ export function getArticles(topic) {
       return data.article;
     })
   }
+
+  export function getTopics() {
+    return ncNews.get(`/topics`).then(({ data }) => {
+      return data.topics
+    })
+  }
+
+  export function patchArticleVotes(article_id, votes) {
+    return ncNews.patch(`/articles/${article_id}`, {inc_votes: votes}).then(({ data }) => {
+      return data.article;
+    })
+  }
