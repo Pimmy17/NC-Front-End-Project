@@ -27,3 +27,15 @@ export function getArticles(topic) {
       return data.article;
     })
   }
+
+  export function getComments(article_id) {
+    return ncNews.get(`/articles/${article_id}/comments`).then(({ data }) => {
+      return data.comments;
+    })
+  }
+
+  export function patchCommentVotes(comment_id,  votes) {
+    return ncNews.patch(`/articles/comments/${comment_id}`, {inc_votes: votes}).then(({ data }) => {
+      return data.comments;
+    })
+  }

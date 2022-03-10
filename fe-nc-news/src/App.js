@@ -6,6 +6,7 @@ import Articles from "./Components/articles";
 import Header from "./Components/Header";
 import ArticleCard from "./Components/article-card";
 import Topics from "./Components/topics";
+import Comments from "./Components/comments";
 
 function App() {
   const [topic, setTopic] = useState("");
@@ -35,17 +36,10 @@ function App() {
               />
             }
           />
-          {/* <Route
-            path="/news/*"
-            element={
-              <Articles
-                topic={topic}
-                setTopic={setTopic}
-                articles={articles}
-                setArticles={setArticles}
-              />
-            }
-          /> */}
+          <Route
+            path="/news/:topic/articles/:article_id/comments"
+            element={<Comments />}
+          />
         </Routes>
       </div>
     </BrowserRouter>
