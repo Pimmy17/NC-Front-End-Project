@@ -17,7 +17,6 @@ export default function Comments () {
     }
 
     const updatedVotes = (comment_id, voting) => {
-        // console.log(voting)
         api.patchCommentVotes(comment_id, voting)
         .catch(({response: {data: {msg}, status}}) => {
             setError({status, msg})
@@ -52,7 +51,6 @@ export default function Comments () {
                         className='articles'>
                             By {author} <br />
                             Posted At: {getHumanTime(created_at)} <br />
-                            Votes: {votes} <br />
                             <CommentVoting votes={votes} comment_id={comment_id}
                             updatedVotes={updatedVotes} />
                             {body}    
