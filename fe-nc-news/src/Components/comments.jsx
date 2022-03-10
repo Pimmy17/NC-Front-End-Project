@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react';
 import * as api from '../Api';
 import { useParams } from 'react-router-dom'
 import CommentVoting from './commentVoting';
-
+import PostComment from './postComment';
 
 export default function Comments () {
     const [loading, isLoading] = useState(true)
@@ -45,6 +45,7 @@ export default function Comments () {
 
         return (
             <section className='list'>
+                {<PostComment />}
                 {comments.map(({comment_id, body, author, votes, created_at}) => {
                     return (
                         <div key={comment_id}

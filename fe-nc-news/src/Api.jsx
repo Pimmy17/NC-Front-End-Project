@@ -39,3 +39,9 @@ export function getArticles(topic) {
       return data.comments;
     })
   }
+
+  export function postComment(article_id, comment) {
+    return ncNews.post(`/articles/${article_id}/comments`, comment).then(({ data }) => {
+      return data.comments
+    })
+  }
