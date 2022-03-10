@@ -7,7 +7,6 @@ export default function PostComment () {
     const [error, setError] = useState(null)
     const [body, setBody] = useState('')
     const [submitting, setSubmitting] = useState(false)
-    const [success, setSuccess] = useState('')
     const username = 'grumpy19' //to be changed to logged in user
     const {article_id} = useParams()
 
@@ -19,15 +18,11 @@ export default function PostComment () {
         .then(() => {
             setSubmitting(false)
             setBody('√ Post Successful!')
-            
         })
         .catch(({response: {data: {msg}, status}}) => {
             setError({status, msg})
         })
     }
-
-    
-    
 
 
     if (error) return (
