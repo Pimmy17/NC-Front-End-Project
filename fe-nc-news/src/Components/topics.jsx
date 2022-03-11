@@ -2,7 +2,7 @@ import * as api from '../Api';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-export default function Topics({topic, setTopic}) {
+export default function Topics() {
     const [topics, setTopics] = useState([])
     const [error, setError] = useState(null)
     const [loading, isLoading] = useState(true)

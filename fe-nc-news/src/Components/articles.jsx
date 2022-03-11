@@ -4,7 +4,7 @@ import {Link, useParams} from 'react-router-dom'
 
 
 
-export default function Articles ({ articles, setArticles}) {
+export default function Articles ({articles, setArticles}) {
     const [loading, isLoading] = useState(true)
     const [error, setError] = useState(null)
     const {topic} = useParams();
@@ -18,12 +18,6 @@ export default function Articles ({ articles, setArticles}) {
                 isLoading(false)
                 setError(null)
             })
-            // .catch(( {
-            //     response: {data: {msg}, status}
-            // }) => {
-            //     setError({status, msg})
-            //     isLoading(false)
-            // })
         }
         else {
             api.getArticles(topic)

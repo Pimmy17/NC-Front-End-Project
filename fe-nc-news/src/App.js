@@ -18,7 +18,7 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Header topic={topic} setTopic={setTopic} />
-        <Topics topic={topic} setTopic={setTopic} />
+        <Topics />
         <Routes>
           <Route path="/" element={<Home />} />
 
@@ -28,14 +28,7 @@ function App() {
           />
           <Route
             path="/news/:topic/articles"
-            element={
-              <Articles
-                topic={topic}
-                setTopic={setTopic}
-                articles={articles}
-                setArticles={setArticles}
-              />
-            }
+            element={<Articles articles={articles} setArticles={setArticles} />}
           />
           <Route
             path="/news/:topic/articles/:article_id/comments"
