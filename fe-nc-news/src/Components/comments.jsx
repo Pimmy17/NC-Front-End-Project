@@ -4,10 +4,10 @@ import { useParams } from 'react-router-dom'
 import CommentVoting from './commentVoting';
 import PostComment from './postComment';
 
-export default function Comments () {
+export default function Comments ({comments, setComments}) {
     const [loading, isLoading] = useState(true)
     const [error, setError] = useState(null)
-    const [comments, setComments] = useState([])
+    
     const {article_id} = useParams()
 
     const getHumanTime = (created_at) => {
@@ -45,7 +45,7 @@ export default function Comments () {
 
         return (
             <section className='list'>
-                {<PostComment />}
+                <PostComment comments={comments} setComments={setComments}/>
                 {comments.map(({comment_id, body, author, votes, created_at}) => {
                     return (
                         <div key={comment_id}

@@ -22,6 +22,10 @@ export function getArticles(topic) {
     })
   }
 
+  /*export function getTopics(topic) {
+    return ncNews.get(`/articles?topics=${topics}.then(({ data }) => {
+      return data.article;})}*/
+
   export function patchArticleVotes(article_id, votes) {
     return ncNews.patch(`/articles/${article_id}`, {inc_votes: votes}).then(({ data }) => {
       return data.article;
@@ -40,8 +44,8 @@ export function getArticles(topic) {
     })
   }
 
-  export function postComment(article_id, comment) {
-    return ncNews.post(`/articles/${article_id}/comments`, comment).then(({ data }) => {
-      return data.comments
+  export function postComment(article_id, {author, body}) {
+    return ncNews.post(`/articles/${article_id}/comments`, {username: author, body}).then(({ data }) => {
+      return data.comment
     })
   }
