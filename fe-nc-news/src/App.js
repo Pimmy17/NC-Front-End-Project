@@ -11,6 +11,7 @@ import Comments from "./Components/comments";
 function App() {
   const [topic, setTopic] = useState("");
   const [articles, setArticles] = useState([]);
+  const [comments, setComments] = useState([]);
 
   return (
     <BrowserRouter>
@@ -38,7 +39,7 @@ function App() {
           />
           <Route
             path="/news/:topic/articles/:article_id/comments"
-            element={<Comments />}
+            element={<Comments comments={comments} setComments={setComments} />}
           />
         </Routes>
       </div>
