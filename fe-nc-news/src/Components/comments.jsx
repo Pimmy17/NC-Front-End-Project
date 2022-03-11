@@ -60,6 +60,4 @@ export default function Comments ({comments, setComments}) {
                 })}    
             </section>
         )
-
-
 }

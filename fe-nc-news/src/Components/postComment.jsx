@@ -13,12 +13,10 @@ export default function PostComment ({comments, setComments}) {
     const handleSubmit = (event) => {
         event.preventDefault()
         const comment = {author, body}
-        
         setSubmitting(true)
         
         api.postComment(article_id, comment)
         .then((newComment) => {
-            console.log(newComment)
             setSubmitting(false)
             setBody('√ Post Successful!')
             setComments([newComment, ...comments])
@@ -27,7 +25,6 @@ export default function PostComment ({comments, setComments}) {
             setError({status, msg})
         })
     }
-
 
     if (error) return (
         <h3>Uh oh! :( <br /> {error.status}: {error.msg}</h3>)
@@ -44,7 +41,4 @@ export default function PostComment ({comments, setComments}) {
             </form>
         </div>
     )
-
-
-
 }

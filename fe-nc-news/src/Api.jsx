@@ -22,10 +22,6 @@ export function getArticles(topic) {
     })
   }
 
-  /*export function getTopics(topic) {
-    return ncNews.get(`/articles?topics=${topics}.then(({ data }) => {
-      return data.article;})}*/
-
   export function patchArticleVotes(article_id, votes) {
     return ncNews.patch(`/articles/${article_id}`, {inc_votes: votes}).then(({ data }) => {
       return data.article;

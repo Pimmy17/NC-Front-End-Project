@@ -7,8 +7,6 @@ export default function Topics({topic, setTopic}) {
     const [error, setError] = useState(null)
     const [loading, isLoading] = useState(true)
     
-    
-
     useEffect(() => {
         isLoading(true)
         setTopics([])
@@ -19,10 +17,9 @@ export default function Topics({topic, setTopic}) {
             setError(null)
         })
         .catch(( {
-            
             response: {data: {msg}, status}
         }) => {
-            console.log('error block')
+            console.log('catch block')
             setError({status, msg})
         })
     }, [])
@@ -33,27 +30,17 @@ export default function Topics({topic, setTopic}) {
     return (
         <section className='topic-list'> Topics: 
         <Link to={`/news/all/articles`} className='topic-button'>
-            <button className='topic-button' value='' 
-                onClick={(event) => {
-                setTopic(event.target.value)
-            }}>
-                All
-                </button>
+                All 
         </Link>
             {topics.map(({slug}) => {
              return (
-                <div key={slug} className="topic">
-             
+                <div key={slug} className="topic-list">
                  <Link to={`/news/${slug}/articles`} className='topic-button' >
-                     <button className='topic-button' value={slug}
-                    onClick={(event) => {
-                    setTopic(event.target.value)
-                    }}>{slug}</button>
+                     {slug}
                  </Link>
-            
-             
-             </div> )  
-        })}
+                </div> )  
+                })
+            }
         </section>
     )
 }

@@ -7,6 +7,7 @@ import Header from "./Components/Header";
 import ArticleCard from "./Components/article-card";
 import Topics from "./Components/topics";
 import Comments from "./Components/comments";
+import Error from "./Components/errors";
 
 function App() {
   const [topic, setTopic] = useState("");
@@ -22,11 +23,10 @@ function App() {
           <Route path="/" element={<Home />} />
 
           <Route
-            path="/news/all/articles/:article_id"
+            path="/news/:topic/articles/:article_id"
             element={<ArticleCard />}
           />
           <Route
-            exact
             path="/news/:topic/articles"
             element={
               <Articles
@@ -41,6 +41,7 @@ function App() {
             path="/news/:topic/articles/:article_id/comments"
             element={<Comments comments={comments} setComments={setComments} />}
           />
+          <Route path="*" element={<Error />} />
         </Routes>
       </div>
     </BrowserRouter>
