@@ -9,7 +9,7 @@ export default function Voting({votes, article_id, updatedVotes}) {
     };
     return (
         <section>
-            <h4>Votes: {votes + castVote}</h4>
+            <p><strong>Votes: {votes + castVote}</strong></p>
             <button disabled={castVote === 1} onClick={(() => handleClick(1))}>+</button>
             <button disabled={castVote === -1} onClick={(() => handleClick(-1))}>-</button>
         </section>

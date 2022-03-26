@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 
 
-export default function Header({topic, setTopic}) {
+export default function Header() {
 
     return (
     <header className="site-header">

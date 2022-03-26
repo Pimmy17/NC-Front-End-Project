@@ -9,8 +9,14 @@
   color: #924f9e;
 }
 
+.site-header-topics {
+  background-color: gold;
+  color: #924f9e;
+}
+
 h1 {
-  font-size: 3em;
+  font-size: 6rem;
+  margin-bottom: 1rem;
 }
 
 .App-header {
@@ -22,25 +28,33 @@ h1 {
   font-size: calc(10px + 2vmin);
 }
 
-header .link {
+.link {
   color: #924f9e;
   padding: 2px;
   margin: 2px;
 }
 
-.link {
-  color: white;
-}
-
 .articles {
-  border: 2px solid gold;
-  border-radius: 15%;
+  border: 3px solid gold;
+  border-radius: 15% 15% 15% 15%;
   padding: 4px;
   margin: 4px;
+  flex: auto;
+  display: inline-flex;
+  width: 300px;
+  height: 150px;
+  justify-content: center;
+  margin-top: 10px;
 }
 
 .article-card {
   color: gold;
+}
+
+.text-body {
+  text-align: justify;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .list-text {
@@ -50,6 +64,104 @@ header .link {
 }
 
 .articleCard-image {
-  width: 40%;
-  height: 40%;
+  width: 20%;
+  height: 20%;
+  padding: 2rem;
+  margin-top: 0px;
+  float: left;
+  border-radius: 50%;
+  border: solid 2px white;
+  margin: 1rem;
+}
+
+@media screen and (max-device-width: 500px) {
+  .articleCard-image {
+    width: 25%;
+    height: 25%;
+    padding: 2rem;
+    margin-top: 0px;
+    float: none;
+    border-radius: 50%;
+    border: solid 2px white;
+    margin: 1rem;
+  }
+
+  h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.article-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.topic-button {
+  text-decoration: none;
+  text-transform: capitalize;
+  padding: 2px;
+  margin: 2px;
+  flex: auto;
+}
+
+.topic-list {
+  display: inline-flex;
+  margin: 2px;
+  padding: 2px;
+}
+
+.deleteButton {
+  margin-left: 14rem;
+}
+
+.comments {
+  border: 2px solid gold;
+  border-radius: 15% 15% 15% 15%;
+  padding: 4px;
+  margin: 4px;
+  flex: auto;
+  max-width: 310px;
+  color: white;
+  font-weight: bold;
+}
+
+.comments-list {
+  display: flex;
+  margin: 2px;
+  padding: 2px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.link-reverse {
+  color: gold;
+  padding: 2px;
+  margin: 2px;
+}
+
+button {
+  color: #924f9e;
+  background-color: gold;
+  border: solid 2px gold;
+  cursor: pointer;
+  margin: 2px;
+}
+
+:disabled {
+  color: #924f9e;
+  background-color: grey;
+  border: solid 2px grey;
+  cursor: not-allowed;
+  margin: 2px;
+}
+
+.topic {
+  text-transform: capitalize;
+}
+
+textarea {
+  width: 50%;
+  height: 4rem;
 }

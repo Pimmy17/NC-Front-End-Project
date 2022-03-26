@@ -4,8 +4,9 @@ const ncNews = axios.create({
     baseURL: 'https://apimlott-nc-news.herokuapp.com/api'
 })
 
-export function getArticles(topic) {
-    return ncNews.get("/articles", {params:{topic}}).then(({ data }) => {
+export function getArticles(topic, sort_by, orderBy) {
+  // console.log(sort_by, orderBy)
+    return ncNews.get("/articles", {params:{topic, sort_by, orderBy}}).then(({ data }) => {
       return data.articles;
     });
   }
@@ -44,4 +45,8 @@ export function getArticles(topic) {
     return ncNews.post(`/articles/${article_id}/comments`, {username: author, body}).then(({ data }) => {
       return data.comment
     })
+  }
+
+  export function deleteComment(comment_id) {
+    return ncNews.delete(`/articles/comments/${comment_id}`)
   }

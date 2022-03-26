@@ -28,7 +28,8 @@ export default function Topics() {
     if (error) return (
         <h3>Uh oh! :O <br /> {error.status}: {error.msg}</h3>)
     return (
-        <section className='topic-list'> Topics: 
+        <section className='site-header-topics'> 
+        <strong className='link'>Topics:</strong>
         <Link to={`/news/all/articles`} className='topic-button'>
                 All 
         </Link>

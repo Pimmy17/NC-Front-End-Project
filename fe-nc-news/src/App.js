@@ -13,6 +13,8 @@ function App() {
   const [topic, setTopic] = useState("");
   const [articles, setArticles] = useState([]);
   const [comments, setComments] = useState([]);
+  // const [order, setOrder] = useState("desc");
+  // const [sort, setSort] = useState("created_at");
 
   return (
     <BrowserRouter>

@@ -7,7 +7,8 @@ import {Link, useParams} from 'react-router-dom'
 export default function Articles ({articles, setArticles}) {
     const [loading, isLoading] = useState(true)
     const [error, setError] = useState(null)
-    const {topic} = useParams();
+    // const [sort, setSort] = useState('A -> Z')
+    const {topic, /*sort_by, orderBy*/} = useParams();
 
     useEffect(() =>{
         isLoading(true)
@@ -32,7 +33,7 @@ export default function Articles ({articles, setArticles}) {
                 isLoading(false)
             })
         }
-    }, [topic])
+    }, [topic, setArticles])
 
 
     if (loading) return <h3>Loading...</h3>
@@ -53,7 +54,8 @@ export default function Articles ({articles, setArticles}) {
                 <div key={article_id} className='articles'>
                     <Link to={`/news/${topic}/articles/${article_id}`} className='list-text'> 
                     {title} <br />
-                    by {author} <br/>
+                    <br />
+                    By {author} <br/>
                     Votes: {votes}
                 </Link>
                 </div>

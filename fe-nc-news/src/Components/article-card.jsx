@@ -50,21 +50,27 @@ export default function ArticleCard() {
     return (
         <section className='article-card'>
             <dl key={articleCard.article_id}>
-            <dt><h2>{articleCard.title}</h2></dt>
-            <dt>by {articleCard.author}</dt>
+            <dt className='article-title'><strong>{articleCard.title}</strong></dt>
+            <br />
             <img src={picture} alt={`Author, ${articleCard.author}`} className='articleCard-image' />
-            <dt>Topic: {articleCard.topic}</dt>
-            <dt>Created: {getHumanTime(articleCard.created_at)}</dt>
+            
+            <br />
+            <div className='article-info'>
+            <dt><strong>By {articleCard.author}</strong></dt>
+            <dt className='topic'>Topic: {articleCard.topic}</dt>
+            <dt>{getHumanTime(articleCard.created_at)}</dt>
+            </div>
             <Voting 
             votes={articleCard.votes}
             article_id={articleCard.article_id}
             updatedVotes={updatedVotes}
             />
             <dt>Comments: {articleCard.comment_count}</dt>          
-            <Link to={`/news/${articleCard.topic}/articles/${articleCard.article_id}/comments`} >
+            <Link to={`/news/${articleCard.topic}/articles/${articleCard.article_id}/comments`} className='link-reverse'>
                 View Comments
                 </Link>
-            <dt>{articleCard.body}</dt>
+                <br />
+            <dt className='text-body'>{articleCard.body}</dt>
             </dl>
         </section>
     )

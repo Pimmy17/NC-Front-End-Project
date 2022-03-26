@@ -32,10 +32,10 @@ export default function PostComment ({comments, setComments}) {
         <div key={author} className='add-comment'>
             <h2>Post Comment</h2>
             <form onSubmit={handleSubmit}>
-                <label>Comment: </label>
                 <textarea value={body} 
                 onChange={(event) => {setBody(event.target.value)}}
                 required></textarea>
+                <br />
                 {!submitting && <button>Submit</button>}
                 {submitting && <button disabled>Posting...</button>}
             </form>
