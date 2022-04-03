@@ -5,7 +5,7 @@
 This project is to combine 2 weeks worth of knowledge from Northcoder's front end course with the already created [back end project](https://github.com/Pimmy17/NC-Back-End-Project) I had created earlier.
 The App has been created in the style of Reddit, where a user can read articles and comments, post new comments and vote on both articles and comments.
 
-The Hosted Version of this project can be found [here]()
+The Hosted Version of this project can be found [here](https://andyp-nc-news-project.netlify.app/)
 
 ---
 
