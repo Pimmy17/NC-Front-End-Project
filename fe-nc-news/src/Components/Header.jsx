@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 
 
+
 export default function Header() {
 
     return (
@@ -8,7 +9,7 @@ export default function Header() {
           <h1>NC NEWS</h1>
           <>
             <Link to="/" className="link">
-              <strong>Home</strong>
+            <strong>Home</strong>
             </Link>
             <Link to="/news/all/articles" className="link"> 
                <strong>Articles</strong>

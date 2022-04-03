@@ -61,8 +61,16 @@ export default function Comments ({comments, setComments}) {
 
 
     if (loading) return <h3>Loading...</h3>
-    if (error) return (
-        <h3>Uh oh! :( <br /> {error.status}: {error.msg}</h3>)
+    if (error) return (<>
+        <h3><strong>{error.status}: {error.msg} </strong></h3>
+        <h5>
+        <br />
+        <em>♫ Comment, Comment, Comment, Comment Chameleon
+        <br />
+        You come and go, where did you go? ♫ </em>
+        <br /> - Culture Club(sort of)
+        </h5>
+        </>)
     if (deleting) return <h4>Deleting...</h4>
     
         return (

@@ -25,8 +25,16 @@ export default function Topics() {
     }, [])
 
     if (loading) return <h3>Fetching Topics...</h3>
-    if (error) return (
-        <h3>Uh oh! :O <br /> {error.status}: {error.msg}</h3>)
+    if (error) return (<>
+        <h3><strong>{error.status}: {error.msg} </strong></h3>
+        <h5>
+        <br />
+        <em>♫ Woah, we're half way there,
+        <br />
+        Woah, no topics on a page ♫ </em>
+        <br /> - Bon Jovi(sort of)
+        </h5>
+        </>)
     return (
         <section className='site-header-topics'> 
         <strong className='link'>Topics:</strong>

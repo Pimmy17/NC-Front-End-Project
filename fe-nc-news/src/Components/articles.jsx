@@ -7,8 +7,7 @@ import {Link, useParams} from 'react-router-dom'
 export default function Articles ({articles, setArticles}) {
     const [loading, isLoading] = useState(true)
     const [error, setError] = useState(null)
-    // const [sort, setSort] = useState('A -> Z')
-    const {topic, /*sort_by, orderBy*/} = useParams();
+    const {topic} = useParams();
 
     useEffect(() =>{
         isLoading(true)

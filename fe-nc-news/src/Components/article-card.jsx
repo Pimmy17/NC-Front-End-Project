@@ -12,7 +12,6 @@ export default function ArticleCard() {
     const [loading, isLoading] = useState(true)
     const [error, setError] = useState(null)
 
-
     const getHumanTime = (created_at) => {
         let date = String(new Date(created_at))
         const dateRegex = date.replace(/ GMT.*/, '')
@@ -45,8 +44,16 @@ export default function ArticleCard() {
    
 
     if (loading) return <h3>Loading...</h3>
-    if (error) return (
-    <h3>Uh oh! :( <br /> {error.status}: {error.msg}</h3>)
+    if (error) return (<>
+        <h3><strong>{error.status}: {error.msg} </strong></h3>
+        <h5>
+        <br />
+        <em>♫ Don't go chasing Articles,
+        <br />
+        Please stick to the IDs and Links you're used to ♫ </em>
+        <br /> - TLC(sort of)
+        </h5>
+        </>)
     return (
         <section className='article-card'>
             <dl key={articleCard.article_id}>
@@ -69,6 +76,7 @@ export default function ArticleCard() {
             <Link to={`/news/${articleCard.topic}/articles/${articleCard.article_id}/comments`} className='link-reverse'>
                 View Comments
                 </Link>
+                <br />
                 <br />
             <dt className='text-body'>{articleCard.body}</dt>
             </dl>

@@ -8,13 +8,12 @@ import ArticleCard from "./Components/article-card";
 import Topics from "./Components/topics";
 import Comments from "./Components/comments";
 import Error from "./Components/errors";
+import Footer from "./Components/Footer";
 
 function App() {
   const [topic, setTopic] = useState("");
   const [articles, setArticles] = useState([]);
   const [comments, setComments] = useState([]);
-  // const [order, setOrder] = useState("desc");
-  // const [sort, setSort] = useState("created_at");
 
   return (
     <BrowserRouter>
@@ -38,6 +37,7 @@ function App() {
           />
           <Route path="*" element={<Error />} />
         </Routes>
+        <Footer />
       </div>
     </BrowserRouter>
   );

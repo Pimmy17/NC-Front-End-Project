@@ -26,8 +26,16 @@ export default function PostComment ({comments, setComments}) {
         })
     }
 
-    if (error) return (
-        <h3>Uh oh! :( <br /> {error.status}: {error.msg}</h3>)
+    if (error) return (<>
+        <h3><strong>{error.status}: {error.msg} </strong></h3>
+        <h5>
+        <br />
+        <em>♫ Mister Postman, look and see,
+        <br />
+        Is there an error in your bag for me? ♫ </em>
+        <br /> - The Marvelettes(sort of)
+        </h5>
+        </>)
     return (
         <div key={author} className='add-comment'>
             <h2>Post Comment</h2>

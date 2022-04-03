@@ -4,9 +4,8 @@ const ncNews = axios.create({
     baseURL: 'https://apimlott-nc-news.herokuapp.com/api'
 })
 
-export function getArticles(topic, sort_by, orderBy) {
-  // console.log(sort_by, orderBy)
-    return ncNews.get("/articles", {params:{topic, sort_by, orderBy}}).then(({ data }) => {
+export function getArticles(topic) {
+    return ncNews.get("/articles", {params:{topic}}).then(({ data }) => {
       return data.articles;
     });
   }
