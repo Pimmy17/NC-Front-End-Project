@@ -1,9 +1,9 @@
 import { useParams, Link } from "react-router-dom";
 import { getArticlesbyID } from "../Api";
 import { useState, useEffect } from 'react';
-import picture from './pngegg (8).png'
 import Voting from "./Voting";
 import * as api from '../Api';
+import ArticleImage from "./articleImage";
 
 
 export default function ArticleCard() {
@@ -41,7 +41,6 @@ export default function ArticleCard() {
         })
     }, [article_id])
 
-   
 
     if (loading) return <h3>Loading...</h3>
     if (error) return (<>
@@ -59,8 +58,7 @@ export default function ArticleCard() {
             <dl key={articleCard.article_id}>
             <dt className='article-title'><strong>{articleCard.title}</strong></dt>
             <br />
-            <img src={picture} alt={`Author, ${articleCard.author}`} className='articleCard-image' />
-            
+            <ArticleImage topic={articleCard.topic} />
             <br />
             <div className='article-info'>
             <dt><strong>By {articleCard.author}</strong></dt>

@@ -28,7 +28,6 @@ Finally to access the file in VS Code:
 ```
 Enter the Project file using:
 $ cd NC-Front-End-Project
-$ cd fe-nc-news
 Then
 $ code .
 ```

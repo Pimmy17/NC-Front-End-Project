@@ -66,7 +66,7 @@ h1 {
 .articleCard-image {
   width: 20%;
   height: 20%;
-  padding: 2rem;
+  padding: 0rem;
   margin-top: 0px;
   float: left;
   border-radius: 50%;
@@ -76,9 +76,9 @@ h1 {
 
 @media screen and (max-device-width: 500px) {
   .articleCard-image {
-    width: 25%;
-    height: 25%;
-    padding: 2rem;
+    width: 30%;
+    height: 30%;
+    padding: 0rem;
     margin-top: 0px;
     float: none;
     border-radius: 50%;
